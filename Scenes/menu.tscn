@@ -1,0 +1,103 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfngmmg0eypjw"]
+
+[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_6be5y"]
+[ext_resource type="Texture2D" uid="uid://c6bvded7by0rn" path="res://Assets/MainMenu.png" id="1_dfb02"]
+
+[sub_resource type="Theme" id="Theme_1j8v8"]
+Label/colors/font_color = Color(0.101961, 0.698039, 0.945098, 1)
+Label/font_sizes/font_size = 24
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_6be5y")
+
+[node name="MainMenu" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("1_dfb02")
+
+[node name="Play" type="Label" parent="."]
+offset_left = 528.0
+offset_top = 256.0
+offset_right = 821.0
+offset_bottom = 338.0
+mouse_filter = 0
+theme = SubResource("Theme_1j8v8")
+text = "Begin Torrenting"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music" type="Label" parent="."]
+offset_left = 528.0
+offset_top = 368.0
+offset_right = 821.0
+offset_bottom = 450.0
+mouse_filter = 0
+theme = SubResource("Theme_1j8v8")
+text = "Music on"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX" type="Label" parent="."]
+offset_left = 528.0
+offset_top = 480.0
+offset_right = 821.0
+offset_bottom = 562.0
+mouse_filter = 0
+theme = SubResource("Theme_1j8v8")
+text = "SFX on"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dark" type="Label" parent="."]
+offset_left = 528.0
+offset_top = 592.0
+offset_right = 821.0
+offset_bottom = 674.0
+mouse_filter = 0
+theme = SubResource("Theme_1j8v8")
+text = "Light mode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 456.0
+offset_top = 256.0
+offset_right = 824.0
+offset_bottom = 336.0
+
+[node name="Button2" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 456.0
+offset_top = 368.0
+offset_right = 824.0
+offset_bottom = 448.0
+
+[node name="Button3" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 456.0
+offset_top = 480.0
+offset_right = 824.0
+offset_bottom = 560.0
+
+[node name="Button4" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 456.0
+offset_top = 592.0
+offset_right = 824.0
+offset_bottom = 672.0
+
+[node name="Play2" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 632.0
+offset_right = 520.0
+offset_bottom = 714.0
+mouse_filter = 0
+theme = SubResource("Theme_1j8v8")
+text = "Made by FlaringK
+\"Elevatorstuck\" by \"Tensei\" de Bruin"
+vertical_alignment = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]

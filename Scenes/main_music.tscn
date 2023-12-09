@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://hcdjunj7goml"]
+
+[ext_resource type="AudioStream" uid="uid://dqteb5psivyqe" path="res://Assets/Sound/[Pre-Scratch] Homestuck - ElevatorStuck Extended.mp3" id="1_eru18"]
+
+[node name="MainMusic" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_eru18")
+autoplay = true

@@ -1,0 +1,119 @@
+[gd_scene load_steps=13 format=3 uid="uid://d21lc5ln0pf8a"]
+
+[ext_resource type="Script" path="res://Scenes/game.gd" id="1_mg3gu"]
+[ext_resource type="Script" path="res://Scenes/Dropper.gd" id="1_xjghs"]
+[ext_resource type="Texture2D" uid="uid://bicwr65l1w70w" path="res://Assets/Suika Background.png" id="2_rg6cg"]
+[ext_resource type="Texture2D" uid="uid://70nidk266ctr" path="res://Assets/Grist/BUILD.png" id="4_68h6h"]
+[ext_resource type="Texture2D" uid="uid://ddt3sx0ofl1ri" path="res://Assets/Upnext/DaveGrist.png" id="5_tb5ws"]
+[ext_resource type="Texture2D" uid="uid://0im61n8xf5ey" path="res://Assets/BarBlind.png" id="7_i7bwn"]
+[ext_resource type="AudioStream" uid="uid://gx3ck3hx567b" path="res://Assets/Sound/snd_bluh.wav" id="8_owsqp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6616n"]
+size = Vector2(400, 115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5di82"]
+size = Vector2(16, 513)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etgrl"]
+size = Vector2(1281, 20)
+
+[sub_resource type="Theme" id="Theme_h5tn2"]
+Label/colors/font_color = Color(0.101961, 0.698039, 0.945098, 1)
+Label/font_sizes/font_size = 24
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgkat"]
+size = Vector2(365, 625)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_mg3gu")
+
+[node name="SuikaBackground" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("2_rg6cg")
+
+[node name="Basket" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Basket"]
+position = Vector2(640, 697.5)
+shape = SubResource("RectangleShape2D_6616n")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Basket"]
+position = Vector2(448, 384)
+shape = SubResource("RectangleShape2D_5di82")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Basket"]
+position = Vector2(832, 384)
+shape = SubResource("RectangleShape2D_5di82")
+
+[node name="OutofBounds" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OutofBounds"]
+position = Vector2(640, 816)
+shape = SubResource("RectangleShape2D_etgrl")
+
+[node name="Dropper" type="Node2D" parent="."]
+position = Vector2(640, 64)
+script = ExtResource("1_xjghs")
+
+[node name="Sprite2D" type="Sprite2D" parent="Dropper"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_68h6h")
+
+[node name="UpNext" type="Sprite2D" parent="."]
+position = Vector2(1048, 200)
+texture = ExtResource("5_tb5ws")
+
+[node name="Display" type="Label" parent="."]
+offset_left = 83.0
+offset_top = 195.0
+offset_right = 443.0
+offset_bottom = 259.0
+theme = SubResource("Theme_h5tn2")
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 939.0
+offset_top = 159.0
+offset_right = 1232.0
+offset_bottom = 241.0
+theme = SubResource("Theme_h5tn2")
+text = "Seeding Next Grist..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BarBlind" type="Sprite2D" parent="."]
+position = Vector2(393, 189.5)
+rotation = 3.14159
+texture = ExtResource("7_i7bwn")
+centered = false
+
+[node name="Out" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_owsqp")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 120.0
+offset_top = 583.0
+offset_right = 413.0
+offset_bottom = 665.0
+theme = SubResource("Theme_h5tn2")
+text = "Quit Torrenting"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 46.0
+offset_top = 585.0
+offset_right = 414.0
+offset_bottom = 665.0
+
+[node name="Mouse" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse"]
+position = Vector2(641.5, 328.5)
+shape = SubResource("RectangleShape2D_kgkat")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="Mouse" to="." method="_on_mouse_mouse_entered"]
+[connection signal="mouse_exited" from="Mouse" to="." method="_on_mouse_mouse_exited"]

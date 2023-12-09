@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dqteb5psivyqe"
+path="res://.godot/imported/[Pre-Scratch] Homestuck - ElevatorStuck Extended.mp3-cdc5bb14af7b831d012162f603f125f1.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/[Pre-Scratch] Homestuck - ElevatorStuck Extended.mp3"
+dest_files=["res://.godot/imported/[Pre-Scratch] Homestuck - ElevatorStuck Extended.mp3-cdc5bb14af7b831d012162f603f125f1.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
